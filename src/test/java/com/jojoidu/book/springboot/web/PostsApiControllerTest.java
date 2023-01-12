@@ -45,7 +45,7 @@ public class PostsApiControllerTest {
                 .author("author")
                 .build();
         String url = "http://localhost:" + port + "/api/v1/posts";
-        System.out.printf("%s %s-----------------------------------------%s\n", requestDto.getTitle(), requestDto.getContent(), requestDto.getAuthor());
+//        System.out.printf("%s %s-----------------------------------------%s\n", requestDto.getTitle(), requestDto.getContent(), requestDto.getAuthor());
 
         ResponseEntity<Long> responseEntity = restTemplate
                 .postForEntity(url, requestDto, Long.class);
@@ -59,4 +59,5 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
     }
-}
+
+
