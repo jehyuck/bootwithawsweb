@@ -30,13 +30,14 @@ public class PostsApiControllerTest {
     private TestRestTemplate restTemplate;
     @Autowired
     private PostsRepository pr;
+
     @After
-    public void tearDown() throws Exception{
+    public void tearDown() throws Exception {
         pr.deleteAll();
     }
 
     @Test
-    public void Posts_regist() throws Exception{
+    public void Posts_regist() throws Exception {
         String title = "title";
         String content = "content";
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
@@ -59,5 +60,5 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
     }
-
+}
 
