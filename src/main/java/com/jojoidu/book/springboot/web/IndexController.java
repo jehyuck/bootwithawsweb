@@ -25,6 +25,7 @@ public class IndexController {
         model.addAttribute("posts", ps.findAllDesc());
 
         if (user != null){
+            System.out.println(user.getName());
             model.addAttribute("userName", user.getName());
         }
         return "index";
